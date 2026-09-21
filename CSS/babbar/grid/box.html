@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           margin:0;
+           padding:0;
+           box-sizing: border-box; 
+        }
+
+        body{
+            height:100vh;
+            width:100vw;
+
+        }
+
+        .container{
+            background-color: beige;
+            height: 100%;
+            width:100%;
+            display:grid;
+            row-gap: 10px;
+            column-gap: 10px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(4,1fr);
+        }
+
+        .container>div{
+            background-color: cornflowerblue;
+            border: 2px solid black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color:aliceblue;
+            font-family: cursive;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .itemsheader, .itemsfooter{
+            grid-column-start: 1;
+            grid-column-end:4;
+        }
+
+        .itemssidebar{
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+        .itemscontent1{
+            grid-column-start: 2;
+            grid-column-end:4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="itemsheader">Header</div>
+        <div class="itemssidebar">Sidebar</div>
+        <div class="itemscontent1">Content1</div>
+        <div class="itemscontent2">Content2</div>
+        <div class="itemscontent3">Content3</div>
+        <div class="itemsfooter"> Footer</div>
+    </div>
+</body>
+</html>

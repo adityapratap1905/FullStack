@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conic{
+            width:200px;
+            height:200px;
+            border:5px solid black;
+            background:conic-gradient(violet,blue,green,yellow,orange,red);
+            margin-bottom: 10px;
+        }
+
+        .radial{
+            width:200px;
+            height:200px;
+            border:5px solid black;
+            background:radial-gradient(violet,blue,green,yellow,orange,red);
+            margin-bottom: 10px;
+        }
+        .linear{
+            width:200px;
+            height:200px;
+            border:5px solid transparent;
+            background:linear-gradient(violet, blue, green) padding-box,linear-gradient(blue, black) border-box;
+            margin-bottom: 10px;
+    
+        }
+
+        .health-bar{
+            width: 250px;
+            height:30px;
+            border:2px solid transparent;
+            border-radius:50px;
+            background: linear-gradient(to right, black,white   ) padding-box,linear-gradient(red,green);
+        }
+        p{
+          color:transparent;
+          font-size:50px;
+          font-weight:900;
+          background:linear-gradient(red,black);
+          background-clip: text;
+          
+        }
+
+        .card{
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="conic"></div>
+    <div class="radial"></div>
+    <div class="linear"></div>
+    <div class="health-bar"></div>
+    <p>BOX</p>
+    <div class="card"></div>
+</body>
+</html>

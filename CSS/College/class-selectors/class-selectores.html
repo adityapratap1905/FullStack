@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Selectors</title>
+    <style>
+
+        /*Universal Selectores*/
+        *{
+            margin:0px;
+            /* padding:0px; */
+            color:red;
+            font-family: cursive;
+            background-color: beige;
+        }
+
+        /* Element Selectors */
+        h2{
+            color:rgb(16, 162, 225);
+        }
+
+        input[type=email]{
+            border-radius: 10px;
+            margin:10px;
+            display:block;
+        }
+
+        li[data=mydata]{
+            background: yellow;
+        }
+
+        
+        /*Class*/
+        .myclass{
+            color:black;
+            font-size: 40px;
+            font-weight: 900;
+        }
+        
+        
+        section h2{
+            color: blueviolet;
+        }
+        section>h2{
+            color:rgb(116, 7, 118);
+        }
+        h2+p{
+            color:green;
+        }
+        h2-p{
+            font-size:30px;
+        }
+
+        /*Combinators*/
+        button[type=submit]{
+            border-radius:10px;
+            color:transparent;
+            /* background: linear-gradient(rgb(43, 26, 158),rgb(235, 229, 229))padding-box,linear-gradient(rgb(0, 255, 140), rgb(244, 7, 213)) border-box;*/
+             color:rgb(5, 5, 5);
+            border:2px solid transparent;
+            box-shadow: 5px 5px 10px 2px rgb(68, 24, 24);
+            height:30px;
+            width:50px;
+            transform: rotate(45deg);
+            
+        }
+        button:hover{
+            background-color:rgb(26, 151, 209);
+            color:aquamarine;
+        }
+
+        button:focus{
+            background-color: yellow;
+        }
+
+        a:link{
+            color:green;
+        }
+        a:visited{
+            color:orange;
+        }
+
+        .form{
+            margin-top: 25px;
+        }
+
+        input{
+            border-width:0px 0px 2px 0px;
+        }
+        /* Pseudo Classes */
+
+        input:focus{
+            outline: 0px;
+            box-shadow:3px 5px 5px grey; 
+        }
+        input:required{
+            border-color:red;
+        }
+
+        input:optional{
+            border-color:green;
+        }
+
+        input:disabled{
+            border-width: 0px;
+            background:grey;
+            color:white;
+            margin-top: 10px;
+            width:60px;
+        }
+
+        input:enabled{
+            font-family:monospace;
+        }
+
+        input:in-range{
+            font-weight: 900;
+           
+            color:green;
+        }
+
+        input:out-of-range{
+           color:red; 
+        }
+
+        input:valid{
+            color:green;
+        }
+
+        input:invalid{
+            color:red;
+        }
+
+        input:placeholder-shown{
+            font-size:25px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Selectors</h2>
+    <ul>
+        <li data="mydata">Universal</li>
+        <li>Id</li>
+        <li class="myclass">Class</li>
+        <li>Attribute</li>
+        <li>Element</li>
+        <li>Combinators</li>
+        <li>Pseudo Class</li>
+        <li>Pseudo Element</li>
+    </ul>
+    <br>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button type="submit">Login</button>
+
+<section>
+     <div>
+        <h2>Hello <p>Para1</p></h2>
+        
+     </div>
+    <P>Para2</P>
+    <h2>Heading2</h2>
+</section>
+<a href="#">Link</a>
+
+<form action="" class="form">
+    <input type="text" placeholder="First name" required><br>
+    <input type="text" placeholder="Middle name" ><br>
+    <input type="text" placeholder="Last name" required><br>
+    <input type="date" ><br>
+    <input type="text" value="Mathura" disabled><br>
+    <input type="number" min="10" max="100" placeholder="Age" required><br>
+    <input type="email" placeholder="Email" required><br>
+    <input type="text" value="GLA" readonly><br>
+    <input type="text" placeholder="Last name" required><br>
+    
+</form>
+</body>
+</html>

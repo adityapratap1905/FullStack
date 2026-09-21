@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Daily Times</title>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap">
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #d8d5ce;
+    color: #171717;
+
+    font-family: "Times New Roman", Times, serif;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   NEWSPAPER
+========================= */
+
+.newspaper {
+    max-width: 1500px;
+    margin: auto;
+
+    background:
+        radial-gradient(
+            rgba(0, 0, 0, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 4px 4px;
+
+    background-color: #eee9df;
+
+    padding: 35px 45px;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.18);
+
+    border: 1px solid #c7c1b6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.masthead {
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(55px, 8vw, 105px);
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    line-height: 0.9;
+
+    margin-bottom: 22px;
+}
+
+
+.top-info {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        2fr
+        1fr
+        auto;
+
+    align-items: center;
+
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+
+    padding: 5px 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.top-info span:nth-child(2) {
+    text-align: center;
+}
+
+.top-info span:nth-child(3) {
+    text-align: center;
+}
+
+
+/* =========================
+   HEADLINE
+========================= */
+
+.headline {
+    text-align: center;
+
+    padding: 18px 0 16px;
+
+    border-bottom: 1px solid #222;
+}
+
+.headline h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(35px, 4.5vw, 62px);
+
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+.headline p {
+    font-size: 24px;
+
+    font-style: italic;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.news-layout {
+    display: grid;
+
+    grid-template-columns:
+        220px
+        minmax(0, 1fr)
+        220px;
+
+    gap: 20px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   SIDEBARS
+========================= */
+
+.left-column {
+    border-right: 1px solid #555;
+
+    padding-right: 15px;
+}
+
+.right-column {
+    border-left: 1px solid #555;
+
+    padding-left: 15px;
+}
+
+
+.side-story {
+    padding-bottom: 20px;
+
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #555;
+}
+
+.side-story:last-child {
+    border-bottom: none;
+}
+
+
+.side-story h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    line-height: 1.05;
+
+    margin: 6px 0 10px;
+}
+
+
+.side-story h4 {
+    font-size: 17px;
+
+    font-style: italic;
+
+    font-weight: normal;
+
+    margin-bottom: 12px;
+}
+
+
+.side-story p {
+    font-size: 16px;
+
+    line-height: 1.25;
+
+    text-align: justify;
+
+    margin-bottom: 10px;
+}
+
+
+.category {
+    display: block;
+
+    color: #8a2b1f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   MAIN ARTICLE
+========================= */
+
+.main-story {
+    min-width: 0;
+}
+
+
+.main-story figure {
+    margin: 0;
+}
+
+
+.main-story img {
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: saturate(0.8) contrast(0.95);
+}
+
+
+figcaption {
+    text-align: center;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    padding: 5px 10px 12px;
+}
+
+
+/* =========================
+   ARTICLE TEXT
+========================= */
+
+.article-columns {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    border-bottom: 1px solid #555;
+
+    padding-bottom: 20px;
+}
+
+
+.article-columns > div {
+    font-size: 17px;
+
+    line-height: 1.25;
+
+    text-align: justify;
+}
+
+
+.article-columns p {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   BOTTOM SECTION
+========================= */
+
+.bottom-section {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1fr
+        1fr;
+
+    margin-top: 15px;
+}
+
+
+.bottom-section article {
+    padding: 0 20px;
+
+    border-right: 1px solid #555;
+}
+
+.bottom-section article:first-child {
+    padding-left: 0;
+}
+
+.bottom-section article:last-child {
+    border-right: none;
+}
+
+
+.bottom-section span {
+    color: #8a2b1f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.bottom-section h3 {
+    font-size: 20px;
+
+    margin: 5px 0;
+}
+
+
+.bottom-section p {
+    font-size: 15px;
+
+    line-height: 1.2;
+}
+
+
+blockquote {
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.1;
+
+    margin: 7px 0;
+}
+
+
+small {
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   WEATHER
+========================= */
+
+.weather-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 8px;
+}
+
+
+.weather-icon {
+    font-size: 40px;
+}
+
+
+.weather-content strong {
+    font-size: 28px;
+
+    font-weight: normal;
+}
+
+
+.weather-content p {
+    max-width: 130px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .newspaper {
+        padding: 25px;
+    }
+
+    .news-layout {
+        grid-template-columns:
+            180px
+            minmax(0, 1fr)
+            180px;
+
+        gap: 15px;
+    }
+
+    .main-story img {
+        height: 280px;
+    }
+
+    .side-story h3 {
+        font-size: 20px;
+    }
+
+    .side-story p {
+        font-size: 14px;
+    }
+
+    .article-columns > div {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 0;
+    }
+
+    .newspaper {
+        padding: 20px 15px;
+
+        box-shadow: none;
+    }
+
+
+    .masthead {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .top-info {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 5px;
+
+        font-size: 11px;
+    }
+
+    .top-info span:nth-child(2),
+    .top-info span:nth-child(3) {
+        text-align: left;
+    }
+
+
+    .headline h2 {
+        font-size: 32px;
+    }
+
+    .headline p {
+        font-size: 17px;
+    }
+
+
+    .news-layout {
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .left-column,
+    .right-column {
+        border: none;
+
+        padding: 0;
+    }
+
+
+    .main-story {
+        order: -1;
+    }
+
+
+    .main-story img {
+        height: 230px;
+    }
+
+
+    .article-columns {
+        grid-template-columns: 1fr;
+    }
+
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    .bottom-section article {
+        border-right: none;
+
+        border-bottom: 1px solid #555;
+
+        padding: 0 0 15px;
+    }
+
+}
+</style>
+<body>
+
+    <div class="newspaper">
+
+        <!-- HEADER -->
+        <header>
+
+            <h1 class="masthead">THE DAILY TIMES</h1>
+
+            <div class="top-info">
+                <span>VOL. 128 - NO. 45</span>
+                <span>YOUR TRUSTED SOURCE FOR NEWS</span>
+                <span>FRIDAY, MAY 17, 2024</span>
+                <span>$2.00</span>
+            </div>
+
+        </header>
+
+
+        <!-- MAIN HEADLINE -->
+        <section class="headline">
+
+            <h2>New Technology Park Inaugurated in the City</h2>
+
+            <p>
+                State-of-the-art facility expected to boost innovation
+                and create thousands of jobs
+            </p>
+
+        </section>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="news-layout">
+
+
+            <!-- LEFT SIDEBAR -->
+            <aside class="left-column">
+
+                <article class="side-story">
+
+                    <h3>Education Reform Bill Clears Parliament</h3>
+
+                    <h4>New policies aim to improve learning outcomes nationwide</h4>
+
+                    <p>
+                        In a significant development for the education sector,
+                        the Parliament today passed the long-awaited Education
+                        Reform Bill. The bill introduces several key changes,
+                        including curriculum updates, teacher training programs,
+                        and increased funding for public schools.
+                    </p>
+
+                    <p>
+                        Education Minister Ananya Sharma said the reform is a
+                        “historic step toward building a stronger and more
+                        inclusive education system”.
+                    </p>
+
+                </article>
+
+
+                <article class="side-story sports">
+
+                    <span class="category">SPORTS</span>
+
+                    <h3>City United Clinches Premier League Title</h3>
+
+                    <p>
+                        City United secured their third consecutive Premier
+                        League title after a thrilling 2-1 victory in the
+                        final match of the season.
+                    </p>
+
+                </article>
+
+            </aside>
+
+
+            <!-- CENTER COLUMN -->
+            <section class="main-story">
+
+                <figure>
+
+                    <img src="image.png"
+                         alt="Modern technology park">
+
+                    <figcaption>
+                        The new technology park spans over 50 acres and houses
+                        leading tech companies and startups.
+                    </figcaption>
+
+                </figure>
+
+
+                <div class="article-columns">
+
+                    <div>
+                        <p>
+                            The Chief Minister inaugurated the new Technology
+                            Park yesterday, calling it “a milestone in our
+                            journey toward a digitally empowered future”.
+                        </p>
+
+                        <p>
+                            Spread over 50 acres, the park will welcome more
+                            than 200 tech companies and start-ups.
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <p>
+                            It includes advanced infrastructure, research
+                            centers, co-working spaces, and amenities for
+                            employees.
+                        </p>
+
+                        <p>
+                            Officials said the project will generate over
+                            15,000 jobs in the next five years and position
+                            the city as a major hub for innovation and
+                            investment.
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <p>
+                            Several national and international companies
+                            have already set up their operations here.
+                        </p>
+
+                        <p>
+                            The government also announced plans to expand
+                            the park in the coming years.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- BOTTOM INFORMATION -->
+                <div class="bottom-section">
+
+                    <article>
+                        <span>EDITORIAL</span>
+
+                        <h3>Time to Invest in Green Energy</h3>
+
+                        <p>
+                            The world must shift towards sustainable energy
+                            sources to secure a better future for the next
+                            generation.
+                        </p>
+                    </article>
+
+
+                    <article>
+                        <span>QUOTE OF THE DAY</span>
+
+                        <blockquote>
+                            “Innovation distinguishes between a leader
+                            and a follower.”
+                        </blockquote>
+
+                        <small>— Steve Jobs</small>
+                    </article>
+
+
+                    <article class="weather">
+
+                        <span>WEATHER</span>
+
+                        <div class="weather-content">
+                            <div class="weather-icon">☔</div>
+
+                            <div>
+                                <strong>28°C</strong>
+
+                                <p>
+                                    Partly cloudy with
+                                    a chance of rain.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT SIDEBAR -->
+            <aside class="right-column">
+
+                <article class="side-story">
+
+                    <span class="category">ECONOMY</span>
+
+                    <h3>Inflation Rate Drops to 4.2% in April</h3>
+
+                    <p>
+                        The recent dip in inflation brings relief to consumers
+                        as the cost of essential goods shows a steady decline.
+                    </p>
+
+                    <p>
+                        Experts believe the trend will continue in the
+                        coming months.
+                    </p>
+
+                </article>
+
+
+                <article class="side-story">
+
+                    <span class="category">NATIONAL</span>
+
+                    <h3>Heavy Rains Cause Floods in Several States</h3>
+
+                    <p>
+                        Continuous rainfall over the past week has triggered
+                        severe floods in multiple regions.
+                    </p>
+
+                    <p>
+                        Rescue operations are underway, and relief camps
+                        have been set up.
+                    </p>
+
+                </article>
+
+
+                <article class="side-story">
+
+                    <span class="category">WORLD</span>
+
+                    <h3>Global Leaders Meet at Climate Summit</h3>
+
+                    <p>
+                        Leaders from around the world gather to discuss
+                        strategies to combat climate change and promote
+                        sustainability.
+                    </p>
+
+                </article>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

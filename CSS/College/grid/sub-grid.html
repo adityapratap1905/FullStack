@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub-grid</title>
+    <style>
+
+        :root{
+            --primary-color:blue;
+            /* --text-color:white; */
+            --height:40px;
+            --width:80px;
+        }
+
+        div{
+            --primary-color:red;
+        }
+
+        button{
+            background-color: var(--primary-color);
+            color:var(--text-color,blue);/*Fall back: if text color not work then fall back will act */
+            height:var(--height);
+            width:var(--width);
+            
+        }
+
+        button:hover{
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <button>Click Me!</button>
+    </div>
+</body>
+</html>

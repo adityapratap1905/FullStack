@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Classes & Pseudo Elements</title>
+
+    <style>
+        /* Dark mode when checkbox is checked */
+        body:has(#toggle:checked) {
+            background-color: black;
+            color: white;
+        }
+
+        /* Label styling */
+        label {
+            font-size: 30px;
+            color: aqua;
+            font-family: cursive;
+            cursor: pointer;
+        }
+
+        /* Change label color when checkbox is checked */
+        body:has(#toggle:checked) label {
+            color: white;
+        }
+
+        /* ::before pseudo-element */
+        div::before {
+            content: "😃";
+            font-size: 40px;
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+
+        /* ::after pseudo-element */
+        div::after {
+            content: "b";
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        /* Placeholder styling */
+        input::placeholder {
+            color: blue;
+        }
+
+        /* Text selection */
+        p::selection {
+            background-color: rgb(209, 65, 65);
+            color: white;
+        }
+
+        /* First letter */
+        p::first-letter {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* First line */
+        p::first-line {
+            font-weight: 900;
+        }
+
+        /* Text input styling */
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid aqua;
+            border-radius: 5px;
+        }
+
+        /* Checkbox styling */
+        #toggle {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="toggle">
+    <label for="toggle">Dark Mode</label>
+
+    <div>
+        <input type="text" placeholder="Enter your text">
+    </div>
+
+    <p>
+        This is an example paragraph to demonstrate CSS pseudo-elements.
+        Select any part of this text to see the ::selection effect.
+        The first letter is also styled differently.
+    </p>
+
+</body>
+</html>
+

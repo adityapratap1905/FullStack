@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sticky Stacking Cards</title>
+<style>
+  :root{
+    --bg: #14161a;
+    --ink: #f3f1ea;
+    --muted: #9a9a94;
+    --c1: #ff6b5e;
+    --c2: #ffb35e;
+    --c3: #5ecbff;
+    --c4: #a3ff5e;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+  header{
+    padding:80px 24px 40px;
+    text-align:center;
+  }
+  header h1{ margin:0 0 8px; font-size: clamp(28px,5vw,44px); }
+  header p{ margin:0; color:var(--muted); }
+
+  .stack{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 24px 200px;
+  }
+
+  .card{
+    position: sticky;
+    top: 40px;               /* how far from top it sticks */
+    height: 260px;
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 24px;     /* gap before next card slides over it */
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+    color: #14161a;
+  }
+
+  .card h2{ margin:0; font-size: 26px; }
+  .card p{ margin:0; opacity:.85; max-width: 40ch; }
+  .card .tag{
+    align-self:flex-start;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    background: rgba(20,22,26,.15);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  /* each card offsets its sticky point slightly so they fan/stack */
+  .card:nth-child(1){ background: var(--c1); top: 40px; }
+  .card:nth-child(2){ background: var(--c2); top: 64px; }
+  .card:nth-child(3){ background: var(--c3); top: 88px; }
+  .card:nth-child(4){ background: var(--c4); top: 112px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sticky Card Stack</h1>
+  <p>Scroll down — each card locks in place as the next one slides over it.</p>
+</header>
+
+<div class="stack">
+  <div class="card">
+    <span class="tag">Step 01</span>
+    <h2>Plan</h2>
+    <p>This card sticks near the top of the viewport once you scroll to it, and stays there while the next card approaches.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Step 02</span>
+    <h2>Design</h2>
+    <p>Because each card's sticky offset (top) is slightly larger than the last, they stack like a deck instead of overlapping perfectly.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Step 03</span>
+    <h2>Build</h2>
+    <p>position: sticky keeps a card in normal document flow until its scroll position hits the "top" value — then it freezes.</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Step 04</span>
+    <h2>Ship</h2>
+    <p>Keep scrolling — this last card will sit on top of the whole stack.</p>
+  </div>
+</div>
+
+</body>
+</html>

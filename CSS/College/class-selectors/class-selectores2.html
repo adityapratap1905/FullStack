@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color:beige;
+        }
+        p{
+            font-size:20px;
+        }
+        p:nth-child(1){
+            color:red;
+        }
+        /* p:nth-child(2){
+            color:blue;
+        } */
+          p:nth-child(2){
+            color:blue;
+        }
+        p:nth-child(3){
+            color:green;
+        }
+        p:has(span){
+            color:rgb(22, 232, 239);
+        }
+
+
+        li:nth-child(1){
+            color:rgb(172, 172, 24);
+        }
+        li:nth-child(2){
+            color:brown;
+        }
+        li:nth-child(3){
+            color:rgb(214, 214, 17);
+        }
+
+        :is(h1,h2){
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p>Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+    <p>Para<span>4</span></p>
+    
+    <ul>
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Banana</li>
+    </ul>
+
+    <h1>Heading1</h1>
+    <h2>Heading2</h2>
+
+    
+</body>
+</html>

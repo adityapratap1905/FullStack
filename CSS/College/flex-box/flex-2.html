@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:flex;
+            flex-direction:row;
+            /* outline:2px solid black; */
+            /* justify-content:space-evenly; */
+            box-sizing:border-box;
+            flex-wrap:wrap;
+            box-shadow: 10px 10px 5px black;
+            border-radius:10px;
+            
+            
+
+        }
+        .container>div{
+            background-color:black;
+            color:white;
+            /* width:100px; */
+            flex-basis:100px;
+            height:100px;
+            align-content:center;
+            text-align:center;
+            border:1px solid black;
+            border-radius:10px;
+            margin-left: 10px;
+            margin-bottom:10px;
+            
+           
+        }
+        #box1{
+            background-color:blue;
+            /* flex-grow:2; */
+            flex:2 0 150px; /* flex-grow flex-shrink flex-basis */
+        }
+        #box2{
+            flex-grow:1;
+            background-color:rgb(206, 27, 131);
+        }
+        #box3{
+            background-color:green;
+            flex-grow:2;
+        }
+        #box4{
+            background-color:rgb(226, 226, 105);
+            flex-grow:4;
+        }
+         #box5{
+            background-color:rgb(62, 111, 125);
+            /* flex-grow:2; */
+            flex:2 0 150px; /* flex-grow flex-shrink flex-basis */
+        }
+        #box6{
+            flex-grow:1;
+            background-color:rgb(255, 0, 0);
+        }
+        #box7{
+            background-color:rgb(167, 20, 149);
+            flex-grow:3;
+        }
+        #box8{
+            background-color:rgb(224, 143, 22);
+            flex-shrink:1;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1">1</div>
+        <div id="box2">2</div>
+        <div id="box3">3</div>
+        <div id="box4">4</div>
+        <div id="box5">5</div>
+        <div id="box6">6</div>
+        <div id="box7">7</div>
+        <div id="box8">8</div>
+    </div>
+</body>
+</html>

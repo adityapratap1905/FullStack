@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        body{
+            margin:0px;
+        }
+
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(135deg,#667eea, #764ba2,#f093fb);
+        }
+
+        .box{
+             background: rgba(255, 255, 255, 0.2);
+            min-height: 400px;
+            width:400px;
+            border-radius: 10px;
+            justify-content: center;
+            align-items:center;
+            display:flex;
+            padding:30px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        form{
+            width:100%;
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .form-group{
+            margin-bottom: 20px;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+
+        .password-box {
+            position: relative;
+        }
+        .password-box input {
+            padding-right: 45px;
+        }
+        .eye {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        input{
+            padding:10px;
+            font-size: 16px;
+            width:100%;
+            border-radius:10px;
+            border:1px solid grey;
+        }
+
+        input:focus{
+            outline: none;
+            border:2px solid rgb(28, 165, 203);
+            box-shadow: 0 0 8px rgba(28, 165, 203, 0.5);
+        }
+
+        input:invalid{
+            border:2px solid red;
+        }
+
+        input:valid{
+            border:2px solid green;
+        }
+
+        button{
+            display: block;
+            width:100%;
+            background-color: black;
+            color:white;
+            padding:10px;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color: deeppink;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <form>
+                <h1>Login</h1>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" minlength="3" maxlength="15" >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                   <div class="password-box">
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <span class="eye">👁</span>
+                </div>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
